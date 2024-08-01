@@ -1,0 +1,41 @@
+信息系统
+来自PILONs图像
+
+defcalculate_average_rgb（图像路径）：
+    # 加载图片并转换为RGB模式
+    Image = Image.打开图像路径）.转换（'RGB'）
+
+    #获取图片的宽度和高度
+    宽度，高度=图像.大小
+
+    # 初始化累加器来存储RGB的累加值
+    总_r = 总_g = 总_b = 0
+
+    #遍历每个像素，累加RGB值
+    对于范围（宽度）内的x：
+        对于 y 在范围内（高度）：
+            r，g，b = 图像.获取像素（（x，y））
+            总r += r
+            总重量 += 克
+            总_b += b
+
+    #计算价格指数
+    总价格=宽度*高度
+
+    #计算平均RGB值
+    avg_r = total_r / 总像素
+    平均像素数 = 总像素数 / 总像素数
+    平均b = 总b / 总像素
+
+    返回 avg_r、avg_g、avg_b
+
+# 指定目录
+目录路径 = './image2'
+
+# 遍历目录中的所有文件
+福罗斯。listdir  ( directory_path )中的文件名：
+    #仅处理图片文件
+    如果 filename.lower (  )  . endswith (  (  '  .png' , '.jpg' , '.jpeg' , '.tiff' , '.bmp' , '.gif   ' )  ) :) ) 
+        图像路径 =网络。小路。join (目录路径，文件名)
+        avg_r，avg_g，avg_b = 计算平均rgb（图像路径）
+        print ( "{filename}: 平均 RGB 值 - R={avg_r:.2f}, G={avg_g:.2f}, B={avg_b:.2f}"
